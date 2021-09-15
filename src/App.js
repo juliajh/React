@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from "./components/Header/Header";
-import Counter from './components/Counter/Counter';
-import ChangeColor from './components/Changecolor/Changecolor';
-import Changesize from './components/Changesize/Changesize';
-import Length from './components/Length/Length';
-import Alert from './components/Alert/Alert';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Main from "../src/pages/Main";
+import Detail from "../src/pages/Detail";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
-  return (
-    //최상단 component
-     <div className="App">
-      <Header/>
-      <Counter/>
-      <ChangeColor/>
-      <Changesize/>
-      <Length/>
-      <Alert/>
-    </div>
-  );
+    return (
+        <Router>
+            <Route exact path="/" component={Main} />
+            <Route exact path="/detail" component={Detail} />
+        </Router>
+    );
 }
 
 export default App;
